@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/punjaab_films/',
+  base: process.env.NODE_ENV === 'production' && process.env.VERCEL !== '1' ? '/punjaab_films/' : '/',
 })
