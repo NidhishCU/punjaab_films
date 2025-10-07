@@ -1,8 +1,29 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Zap } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import './About.css';
 
 const About = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const partnerImages = [
+    '/partners/SunnyBhatti.jpeg',
+    '/partners/shubham1.jpg',
+    '/partners/sunnybhatti1.png',
+    '/partners/shubham2.JPG',
+    '/partners/shubham3.jpg'
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        (prevIndex + 1) % partnerImages.length
+      );
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [partnerImages.length]);
+
   const values = [
     {
       icon: <Target size={40} />,
@@ -38,7 +59,7 @@ const About = () => {
         >
           <h2 className="section-title">About PubjaabFilms</h2>
           <p className="section-subtitle">
-            We are a passionate team of filmmakers, storytellers, and creative professionals 
+            We are a passionate team of filmmakers, storytellers, and creative professionals
             dedicated to bringing your vision to life through the power of cinema.
           </p>
         </motion.div>
@@ -53,13 +74,13 @@ const About = () => {
           >
             <h3>Our Story</h3>
             <p>
-              Founded with a vision to revolutionize storytelling, PubjaabFilms has grown from 
-              a small creative studio to a full-service production house. We specialize in 
+              Founded with a vision to revolutionize storytelling, PubjaabFilms has grown from
+              a small creative studio to a full-service production house. We specialize in
               creating compelling content that resonates with audiences and drives results.
             </p>
             <p>
-              Our team combines years of industry experience with fresh perspectives, ensuring 
-              that every project we undertake is both professionally executed and creatively 
+              Our team combines years of industry experience with fresh perspectives, ensuring
+              that every project we undertake is both professionally executed and creatively
               innovative. From concept to completion, we're committed to excellence.
             </p>
             <div className="about-stats">
@@ -68,7 +89,7 @@ const About = () => {
                 <span className="stat-text">Years Experience</span>
               </div>
               <div className="stat">
-                <span className="stat-number">500+</span>
+                <span className="stat-number">100+</span>
                 <span className="stat-text">Projects Delivered</span>
               </div>
             </div>
@@ -81,8 +102,33 @@ const About = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="image-placeholder">
-              <span>Behind the Scenes</span>
+            <div className="partners-slideshow">
+              <h4>Founders</h4>
+              <div className="slideshow-container">
+                {partnerImages.map((image, index) => (
+                  <motion.img
+                    key={index}
+                    src={image}
+                    alt={`Partner ${index + 1}`}
+                    className={`slideshow-image ${index === currentImageIndex ? 'active' : ''}`}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: index === currentImageIndex ? 1 : 0,
+                      scale: index === currentImageIndex ? 1 : 0.95
+                    }}
+                    transition={{ duration: 0.7 }}
+                  />
+                ))}
+              </div>
+              <div className="slideshow-indicators">
+                {partnerImages.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
+                    onClick={() => setCurrentImageIndex(index)}
+                  />
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

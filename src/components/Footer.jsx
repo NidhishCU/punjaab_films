@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, Film, MessageCircle } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -21,11 +21,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <Facebook size={20} />, href: '#', name: 'Facebook' },
-    { icon: <Twitter size={20} />, href: '#', name: 'Twitter' },
-    { icon: <Instagram size={20} />, href: '#', name: 'Instagram' },
-    { icon: <Linkedin size={20} />, href: '#', name: 'LinkedIn' },
-    { icon: <Youtube size={20} />, href: '#', name: 'YouTube' }
+    { icon: <Instagram size={20} />, href: 'https://www.instagram.com/punjaabfilms', name: 'Instagram' },
+    { icon: <Film size={20} />, href: 'https://www.imdb.com/list/ls527299733?ref_=ext_shr_other', name: 'IMDB' },
+    { icon: <MessageCircle size={20} />, href: 'https://api.whatsapp.com/send/?phone=917508654928&text=Hi&type=phone_number&app_absent=0', name: 'WhatsApp' },
   ];
 
   return (
@@ -44,7 +42,7 @@ const Footer = () => {
               <span>PunjaabFilms</span>
             </div>
             <p className="footer-description">
-              Creating compelling stories through the art of cinema. We bring your vision 
+              Creating compelling stories through the art of cinema. We bring your vision
               to life with professional film production services and creative excellence.
             </p>
             <div className="footer-contact">
@@ -54,11 +52,11 @@ const Footer = () => {
               </div>
               <div className="contact-item">
                 <Phone size={16} />
-                <span>+91 98765 43210</span>
+                <span>+91 9878311210</span>
               </div>
               <div className="contact-item">
                 <MapPin size={16} />
-                <span>Mumbai, Maharashtra</span>
+                <span>Mohali, Punjab</span>
               </div>
             </div>
           </motion.div>
@@ -109,9 +107,11 @@ const Footer = () => {
                   className="gallery-item"
                   onClick={() => window.location.href = '#gallery'}
                 >
-                  <div className="gallery-placeholder">
-                    <span>Image {item}</span>
-                  </div>
+                  <img
+                    src={`/gallery/img${item}.jpeg`}
+                    alt={`Gallery image ${item}`}
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>

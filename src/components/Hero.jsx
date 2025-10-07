@@ -21,8 +21,8 @@ const Hero = () => {
   ];
 
   const stats = [
-    { icon: <Camera size={24} />, number: '500+', label: 'Projects Completed' },
-    { icon: <Award size={24} />, number: '50+', label: 'Awards Won' },
+    { icon: <Camera size={24} />, number: '100+', label: 'Projects Completed' },
+    { icon: <Award size={24} />, number: '10+', label: 'Awards Won' },
     { icon: <Users size={24} />, number: '200+', label: 'Happy Clients' },
     { icon: <Play size={24} />, number: '10+', label: 'Years Experience' }
   ];

@@ -77,7 +77,12 @@ const Services = () => {
                   <li key={featureIndex}>{feature}</li>
                 ))}
               </ul>
-              <button className="service-btn">Learn More</button>
+              <button 
+                className="service-btn"
+                onClick={() => window.location.href = 'mailto:info@punjaabfilms.com?subject=Inquiry about ' + service.title + '&body=Hi, I would like to learn more about your ' + service.title + ' services.'}
+              >
+                Learn More
+              </button>
             </motion.div>
           ))}
         </div>
