@@ -1,0 +1,323 @@
+.gallery {
+  background: #000000;
+}
+
+/* Override container constraints for gallery */
+.gallery .container {
+  max-width: none !important;
+  width: 100% !important;
+  padding: 0 40px !important;
+}
+
+.gallery .gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 40px !important;
+  margin-bottom: 80px !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.gallery-card {
+  background: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  cursor: pointer;
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 320px;
+  min-width: 300px;
+}
+
+.gallery-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+  border-color: #FFD700;
+}
+
+.gallery-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+}
+
+.gallery-1 {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.gallery-2 {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+}
+
+.gallery-3 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gallery-4 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.gallery-5 {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.gallery-6 {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.gallery-7 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gallery-8 {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+.gallery-9 {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.gallery-cta {
+  text-align: center;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  padding: 60px 40px;
+  border-radius: 20px;
+  color: #000000;
+}
+
+.gallery-cta h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.gallery-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-cta .btn {
+  background: #000000;
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.gallery-cta .btn:hover {
+  background: #1a1a1a;
+  transform: translateY(-3px);
+}
+
+.gallery-cta .btn-outline {
+  background: transparent;
+  border: 2px solid #000000;
+  color: #000000;
+}
+
+.gallery-cta .btn-outline:hover {
+  background: white;
+  color: #667eea;
+}
+
+@media (max-width: 1200px) {
+  .gallery .gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    max-width: 1000px !important;
+    justify-content: center !important;
+  }
+  
+  .gallery .container {
+    padding: 0 30px !important;
+  }
+  
+  .gallery .gallery-card {
+    max-width: 280px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    max-width: 600px !important;
+    justify-content: center !important;
+  }
+  
+  .gallery .container {
+    padding: 0 20px !important;
+  }
+  
+  .gallery .gallery-card {
+    max-width: 250px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-cta {
+    padding: 40px 20px;
+  }
+
+  .gallery-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Modal Styles */
+.gallery-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.gallery-modal {
+  background: #1a1a1a;
+  border-radius: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  overflow: hidden;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.modal-image-container {
+  width: 100%;
+  height: 80vh;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .gallery-modal {
+    margin: 10px;
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .modal-image-container {
+    height: 60vh;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0 20px !important;
+  }
+  
+  .gallery .gallery-card {
+    max-width: none !important;
+    width: 100% !important;
+  }
+  
+  .gallery .container {
+    padding: 0 25px !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-modal {
+    margin: 5px;
+  }
+
+  .modal-image-container {
+    height: 50vh;
+    max-height: 300px;
+  }
+
+  .gallery .gallery-grid {
+    gap: 12px !important;
+    justify-content: center !important;
+    padding: 0 25px !important;
+  }
+  
+  .gallery .container {
+    padding: 0 20px !important;
+  }
+}
