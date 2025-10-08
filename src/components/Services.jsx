@@ -43,47 +43,51 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="services section">
+    <section id="services" className="services section" role="main" aria-labelledby="services-title">
       <div className="container">
-        <motion.div
+        <motion.header
           className="services-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">Our Services</h2>
+          <h2 id="services-title" className="section-title">Our Professional Film Production Services</h2>
           <p className="section-subtitle">
             From concept to completion, we offer comprehensive film production services 
-            tailored to bring your creative vision to life.
+            tailored to bring your creative vision to life with <strong>10+ years of experience</strong> in the industry.
           </p>
-        </motion.div>
+        </motion.header>
 
-        <div className="services-grid">
+        <div className="services-grid" role="list" aria-label="Our services">
           {services.map((service, index) => (
-            <motion.div
+            <motion.article
               key={index}
               className="service-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              role="listitem"
+              itemScope
+              itemType="https://schema.org/Service"
             >
-              <div className="service-icon">{service.icon}</div>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-              <ul className="service-features">
+              <div className="service-icon" aria-hidden="true">{service.icon}</div>
+              <h3 className="service-title" itemProp="name">{service.title}</h3>
+              <p className="service-description" itemProp="description">{service.description}</p>
+              <ul className="service-features" itemProp="offers" itemScope itemType="https://schema.org/Offer">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex}>{feature}</li>
+                  <li key={featureIndex} itemProp="itemOffered">{feature}</li>
                 ))}
               </ul>
               <button 
                 className="service-btn"
-                onClick={() => window.location.href = 'mailto:info@punjaabfilms.com?subject=Inquiry about ' + service.title + '&body=Hi, I would like to learn more about your ' + service.title + ' services.'}
+                onClick={() => window.location.href = 'mailto:info@pubjaabfilms.com?subject=Inquiry about ' + service.title + '&body=Hi, I would like to learn more about your ' + service.title + ' services.'}
+                aria-label={`Learn more about ${service.title} services`}
               >
                 Learn More
               </button>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
 

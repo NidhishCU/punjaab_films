@@ -1,6 +1,6 @@
 # PubjaabFilms - Professional Film Production Website
 
-A modern, responsive React.js website for PubjaabFilms, a professional film production company. This website showcases services, portfolio, team, and provides a platform for client engagement.
+A modern, responsive React.js website for PubjaabFilms, a professional film production company. This website showcases services, portfolio, team, and provides a platform for client engagement with comprehensive SEO optimization.
 
 ## Features
 
@@ -11,6 +11,9 @@ A modern, responsive React.js website for PubjaabFilms, a professional film prod
 - **Contact Form**: Professional contact form with validation
 - **Team Section**: Meet the team with social links
 - **Service Pages**: Detailed service offerings
+- **SEO Optimized**: Comprehensive SEO implementation with meta tags, structured data, and performance optimization
+- **Analytics Ready**: Google Analytics integration with custom event tracking
+- **Performance Optimized**: Lazy loading, image optimization, and efficient bundling
 
 ## Tech Stack
 
@@ -19,7 +22,50 @@ A modern, responsive React.js website for PubjaabFilms, a professional film prod
 - **Framer Motion** - Animations and transitions
 - **React Router** - Navigation
 - **Lucide React** - Modern icon library
+- **React Helmet Async** - SEO meta tag management
 - **CSS3** - Custom styling with modern features
+
+## SEO Features
+
+### Implemented SEO Optimizations
+
+1. **Meta Tags & Open Graph**
+   - Dynamic title and description tags
+   - Open Graph tags for social media sharing
+   - Twitter Card meta tags
+   - Canonical URLs
+
+2. **Structured Data (Schema.org)**
+   - Organization schema
+   - Local Business schema
+   - Service schema for each offering
+   - WebSite and WebPage schemas
+
+3. **Technical SEO**
+   - Semantic HTML5 elements
+   - Proper heading hierarchy (H1, H2, H3)
+   - Alt text for all images
+   - ARIA labels for accessibility
+   - Lazy loading for images
+   - Optimized image formats
+
+4. **Performance Optimization**
+   - Code splitting and lazy loading
+   - Image optimization
+   - Font preloading
+   - Minification and compression
+   - Efficient caching strategies
+
+5. **Content Optimization**
+   - Keyword-rich content
+   - Local SEO optimization for Punjab
+   - Industry-specific terminology
+   - Call-to-action optimization
+
+6. **Files Generated**
+   - `robots.txt` - Search engine crawling instructions
+   - `sitemap.xml` - Site structure for search engines
+   - Structured data JSON-LD scripts
 
 ## Getting Started
 

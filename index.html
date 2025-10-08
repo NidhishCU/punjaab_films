@@ -3,15 +3,70 @@
 
 <head>
   <meta charset="UTF-8" />
+  
+  <!-- Favicon and Icons -->
   <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="apple-touch-icon" href="/images/logo.png" />
+  <link rel="shortcut icon" href="/images/logo.png" />
+  
+  <!-- Viewport and Mobile Optimization -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PubjaabFilms - Professional Film Production Services</title>
-  <meta name="description"
-    content="PubjaabFilms - Creating compelling stories through professional film production, commercials, documentaries, and creative video services." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  
+  <!-- Primary Meta Tags -->
+  <title>PubjaabFilms - Professional Film Production Services | Punjab's Premier Video Production Company</title>
+  <meta name="title" content="PubjaabFilms - Professional Film Production Services | Punjab's Premier Video Production Company" />
+  <meta name="description" content="PubjaabFilms - Creating compelling stories through professional film production, commercials, documentaries, and creative video services. Award-winning team with 10+ years experience in Punjab and beyond." />
+  <meta name="keywords" content="film production Punjab, video production services, commercial videos, documentaries, Punjabi cinema, post production, video editing, brand videos, creative direction, film makers Punjab" />
+  <meta name="author" content="PubjaabFilms" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Performance and Preloading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+  <!-- Font Loading with Display Swap for Performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="/images/logo.png" as="image" type="image/png">
+  
+  <!-- Theme and Brand Colors -->
+  <meta name="theme-color" content="#ff6b35" />
+  <meta name="msapplication-TileColor" content="#ff6b35" />
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  
+  <!-- Geo Location for Local SEO -->
+  <meta name="geo.region" content="IN-PB" />
+  <meta name="geo.placename" content="Punjab, India" />
+  <meta name="geo.position" content="30.7333;76.7794" />
+  <meta name="ICBM" content="30.7333, 76.7794" />
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('SW registered: ', registration);
+          })
+          .catch((registrationError) => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+  </script>
 </head>
 
 <body>

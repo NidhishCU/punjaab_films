@@ -47,14 +47,14 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" role="banner" aria-label="Hero section">
       <div className="hero-background">
         <div className="hero-overlay"></div>
       </div>
       
       <div className="container">
         <div className="hero-content">
-          <motion.div
+          <motion.header
             className="hero-text"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,20 +70,21 @@ const Hero = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
+                  aria-live="polite"
                 >
                   {inspiringWords[currentWord]}
                 </motion.span>
               </AnimatePresence>
             </h1>
             <p className="hero-subtitle">
-              We are PubjaabFilms, a creative film production company dedicated to bringing 
-              your vision to life through compelling storytelling and cinematic excellence.
+              We are <strong>PubjaabFilms</strong>, a creative film production company dedicated to bringing 
+              your vision to life through compelling storytelling and cinematic excellence in <em>Punjab and beyond</em>.
             </p>
-            <div className="hero-buttons">
-              <a href="#portfolio" className="btn">View Our Work</a>
-              <a href="#contact" className="btn btn-outline">Get In Touch</a>
-            </div>
-          </motion.div>
+            <nav className="hero-buttons" role="navigation" aria-label="Main actions">
+              <a href="#portfolio" className="btn" aria-label="View our portfolio of work">View Our Work</a>
+              <a href="#contact" className="btn btn-outline" aria-label="Contact us for inquiries">Get In Touch</a>
+            </nav>
+          </motion.header>
           
           <motion.div
             className="hero-video"
@@ -123,8 +124,11 @@ const Hero = () => {
                   >
                     <img 
                       src="/images/logo.png" 
-                      alt="Punjaab Films Logo" 
+                      alt="PubjaabFilms - Professional Film Production Company Logo" 
                       className="hero-logo"
+                      width="200"
+                      height="200"
+                      loading="eager"
                     />
                     <div className="fire-particles">
                       {[...Array(8)].map((_, i) => (
@@ -152,20 +156,22 @@ const Hero = () => {
           </motion.div>
         </div>
         
-        <motion.div
+        <motion.aside
           className="hero-stats"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          role="complementary"
+          aria-label="Company statistics"
         >
           {stats.map((stat, index) => (
-            <div key={index} className="stat-item">
-              <div className="stat-icon">{stat.icon}</div>
-              <div className="stat-number">{stat.number}</div>
-              <div className="stat-label">{stat.label}</div>
+            <div key={index} className="stat-item" itemScope itemType="https://schema.org/Statistic">
+              <div className="stat-icon" aria-hidden="true">{stat.icon}</div>
+              <div className="stat-number" itemProp="value">{stat.number}</div>
+              <div className="stat-label" itemProp="name">{stat.label}</div>
             </div>
           ))}
-        </motion.div>
+        </motion.aside>
       </div>
     </section>
   );
